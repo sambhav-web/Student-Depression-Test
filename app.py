@@ -5,8 +5,9 @@ with open('pipeline.pkl','rb') as f:
   model=pickle.load(f)
 
 df=pd.read_csv('depressed.csv')
+st.title('Depression Status')
 gender=st.selectbox('Select Gender: ',df['Gender'].unique().tolist())
-age=st.number_input('Select your Age: ',1,60,18)
+age=st.number_input('Select your Age: ',1,60,18,1)
 city=st.selectbox('Select Your City : ',df['City'].unique().tolist())
 academic=st.slider('Select Your Academic Pressure : ',0,5)
 workpressure=st.selectbox('Select Your Work Pressure : ',df['Work Pressure'].unique().tolist())
